@@ -58,6 +58,6 @@ gsap.from('[animate] .word', {
     trigger: '[animate]',
     start: 'left center',
     scrub: true,
-    marker: true,
+    markers: true,
   },
 });
