@@ -51,13 +51,13 @@ animatedNodes.forEach((node, index) => {
     scrollTrigger: {
       containerAnimation: timeline,
       trigger: node,
-      start: 'left right',
+      start: 'left right+=20%',
     },
   });
 
   const words = node.querySelectorAll('.word');
   const baseOptions = {
-    duration: 0.5,
+    duration: 0.35,
     ease: 'power1.out',
     stagger: 0.1,
   }
