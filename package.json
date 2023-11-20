@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "esbuild": "^0.19.6",
-    "gsap": "^3.12.2"
+    "gsap": "^3.12.2",
+    "split-type": "^0.3.4"
   }
 }
