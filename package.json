@@ -1,0 +1,16 @@
+{
+  "name": "jedata",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/cursor-agency/jedata",
+  "author": "Misha Zubkov <zu6koff@mail.ru>",
+  "license": "MIT",
+  "scripts": {
+    "build:scripts": "esbuild ./src/index.js --bundle --minify --outfile=index.js",
+    "build:styles": "esbuild ./src/index.css --bundle --minify --outfile=index.css",
+    "build": "npm run build:styles && node esbuild.mjs"
+  },
+  "dependencies": {
+    "esbuild": "^0.19.6"
+  }
+}
