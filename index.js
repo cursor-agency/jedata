@@ -1,1 +1,1 @@
-(()=>{var t=e=>{document.querySelector(e).forEach(o=>{o.textContent.split(" ").forEach(n=>{console.log(n)})})};window.addEventListener("DOMContentLoaded",()=>{t("[animate]")});})();
+(()=>{var t=o=>{document.querySelector(o)?.forEach(e=>{e.textContent.split(" ")?.forEach(r=>{console.log(r)})})};t("[animate]");})();
