@@ -50,12 +50,12 @@ new SplitType('[animate]', {
 gsap.from('[animate] .word', {
   y: '100%',
   opacity: 0,
-  duration: 0.25,
+  duration: 0.2,
   ease: 'power1.out',
-  stagger: 0.05,
+  stagger: 0.025,
 
   scrollTrigger: {
     trigger: '[animate]',
     start: 'left center',
-  }
-});
+  },
+}, "text animation");
