@@ -4,3 +4,7 @@
     color: #5ccdb2;
     background-color: transparent;
 }
+
+html {
+    --color--accent_green: #7fdac4;
+}
