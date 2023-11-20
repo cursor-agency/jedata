@@ -47,7 +47,7 @@ new SplitType('[animate]', {
 const animatedNodes = document.querySelectorAll('[animate]');
 
 animatedNodes.forEach((node, index) => {
-  gsap.from(`[animate="${index+1}"] .word`, {
+  gsap.from(node.querySelectorAll('.word'), {
     y: '110%',
     opacity: 0,
     rotationZ: '10',
@@ -56,7 +56,7 @@ animatedNodes.forEach((node, index) => {
     stagger: 0.1,
     scrollTrigger: {
       containerAnimation: timeline,
-      trigger: `[animate="${index+1}"]`,
+      trigger: node,
       start: 'left right',
       markers: true,
     },
