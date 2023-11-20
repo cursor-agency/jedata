@@ -74,6 +74,7 @@ animatedNodes.forEach((node, index) => {
   }).to(words, {
     ...baseOptions,
     ...initState,
+    rotationZ: '-10',
   })
 })
 
