@@ -49,8 +49,12 @@ new SplitType('[animate]', {
 
 const animatedNodes = document.querySelectorAll('[animate]');
 
-animatedNodes.forEach((node) => {
-  gsap.from('[animate] .word', {
+animatedNodes.forEach((node, index) => {
+  const className = `animated-text__${index}`;
+
+  node.classList.add(className);
+
+  gsap.from(`${className} .word`, {
     y: '110%',
     opacity: 0,
     rotationZ: '10',
