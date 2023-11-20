@@ -1,27 +1,40 @@
-const SELECTORS = {
-  main: {
-    section: ".join-us-main",
-    content: ".join-us-main__content",
-  },
-  cards: {
-    scrollableText: ".join-us-card-5__scrollable-text",
-  },
+const getOffset = (node) => {
+  const rect = node.getBoundingClientRect();
+  return {
+    top: rect.top + window.scrollY,
+    left: rect.left + window.scrollX,
+  };
 };
 
-gsap.to(SELECTORS.main.content, {
-  yPercent: 100,
-  ease: "none",
-  scrollTrigger: {
-    trigger: SELECTORS.main.section,
-    scrub: true,
-  },
-});
+const getSize = (node) => {
+  const rect = node.getBoundingClientRect();
+  return {
+    width: rect.width,
+    height: rect.height,
+  };
+};
 
-const scrollableText = document.querySelector(SELECTORS.cards.scrollableText);
-const scrollableTextWidth = scrollableText.getBoundingClientRect().width;
+const setRotation = (node, size, e) => {
+  const x = getOffset(node).left + size.width / 2;
+  const y = getOffset(node).top + size.height / 2;
 
-gsap.timeline({ repeat: -1 }).to(SELECTORS.cards.scrollableText, {
-  ease: "none",
-  duration: 10,
-  transform: `translateX(-${scrollableTextWidth}px)`,
+  const rad = Math.atan2(e.pageX - x, e.pageY - y);
+  const rot = rad * (180 / Math.PI) * -1 + 180;
+
+  node.style.cssText = `
+      -webkit-transform: rotate(${rot}deg);
+      -moz-transform: rotate(${rot}deg);
+      -ms-transform: rotate((${rot}deg);
+      transform: rotate(${rot}deg);
+    `;
+};
+
+window.addEventListener("DOMContentLoaded", () => {
+  const [eyeOne, eyeTwo] = document.querySelectorAll(".animated-eye-container");
+  const size = getSize(eyeOne);
+
+  window.addEventListener("mousemove", (e) => {
+    setRotation(eyeOne, size, e);
+    setRotation(eyeTwo, size, e);
+  });
 });
