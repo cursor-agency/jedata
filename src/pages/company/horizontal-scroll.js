@@ -51,7 +51,7 @@ animatedNodes.forEach((node, index) => {
     scrollTrigger: {
       containerAnimation: timeline,
       trigger: node,
-      start: 'left right+=20%',
+      start: 'left right-=20%',
     },
   });
 
