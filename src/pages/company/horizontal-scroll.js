@@ -47,19 +47,23 @@ new SplitType('[animate]', {
 const animatedNodes = document.querySelectorAll('[animate]');
 
 animatedNodes.forEach((node, index) => {
-  gsap.from(node.querySelectorAll('.word'), {
-    y: '110%',
-    opacity: 0,
-    rotationZ: '10',
-    duration: 0.5,
-    ease: 'power1.out',
-    stagger: 0.1,
+  const tl = gsap.timeline({
     scrollTrigger: {
       containerAnimation: timeline,
       trigger: node,
       start: 'left right',
       markers: true,
     },
-  }, "text animation")
+  });
+
+  const words = node.querySelectorAll('.word');
+  tl.from(words, {
+    y: '110%',
+    opacity: 0,
+    rotationZ: '10',
+    duration: 0.5,
+    ease: 'power1.out',
+    stagger: 0.1,
+  }, "text animation");
 })
 
