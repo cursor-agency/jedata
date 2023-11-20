@@ -63,6 +63,6 @@ animatedNodes.forEach((node, index) => {
       start: 'left right',
       markers: true,
     },
-  })
+  }, "text animation")
 })
 
