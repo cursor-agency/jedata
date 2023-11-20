@@ -49,8 +49,10 @@ new SplitType('[animate]', {
 
 const animatedNodes = document.querySelectorAll('[animate]');
 
-animatedNodes.forEach((node) => {
-  gsap.from(`${node.className} .word`, {
+animatedNodes.forEach((node, index) => {
+  node.dataset.animationId = index.toString();
+
+  gsap.from(`${node.className}[data-animationId=${index}] .word`, {
     y: '110%',
     opacity: 0,
     rotationZ: '10',
