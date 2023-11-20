@@ -31,16 +31,16 @@ const timeline = gsap.timeline({
   },
 });
 
-timeline.fromTo(
-    SELECTORS.track,
-    {
-      transform: "translate3d(0%, 0px, 0px)",
-    },
-    {
-      transform: "translate3d(-100%, 0px, 0px)",
-    },
-    "horizontal scroll",
-);
+// timeline.fromTo(
+//     SELECTORS.track,
+//     {
+//       transform: "translate3d(0%, 0px, 0px)",
+//     },
+//     {
+//       transform: "translate3d(-100%, 0px, 0px)",
+//     },
+//     "horizontal scroll",
+// );
 
 new SplitType('[animate]', {
   types: 'lines, words',
