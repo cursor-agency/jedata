@@ -43,13 +43,13 @@ timeline.fromTo(
 );
 
 new SplitType('[animate]', {
-  types: 'words',
+  types: 'lines, words',
   tagName: 'span',
 })
 
 gsap.from('[animate] .word', {
   y: '100%',
-  opacity: 1,
+  opacity: 0,
   duration: 0.25,
   ease: 'power1.out',
   stagger: 0.05,
