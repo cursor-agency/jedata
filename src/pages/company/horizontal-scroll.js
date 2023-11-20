@@ -57,6 +57,7 @@ gsap.from('[animate] .word', {
   scrollTrigger: {
     containerAnimation: timeline,
     trigger: '[animate]',
+    start: 'left center',
     scrub: true,
     markers: true,
   },
