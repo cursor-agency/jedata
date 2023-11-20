@@ -45,20 +45,25 @@ timeline.fromTo(
 new SplitType('[animate]', {
   types: 'lines, words',
   tagName: 'span',
-})
-
-gsap.from('[animate] .word', {
-  y: '110%',
-  opacity: 0,
-  rotationZ: '10',
-  duration: 0.5,
-  ease: 'power1.out',
-  stagger: 0.1,
-  scrollTrigger: {
-    containerAnimation: timeline,
-    trigger: '[animate]',
-    start: 'left center',
-    scrub: true,
-    markers: true,
-  },
 });
+
+const animatedNodes = document.querySelectorAll('[animate]');
+
+animatedNodes.forEach((node) => {
+  gsap.from(`${node.className} .word`, {
+    y: '110%',
+    opacity: 0,
+    rotationZ: '10',
+    duration: 0.5,
+    ease: 'power1.out',
+    stagger: 0.1,
+    scrollTrigger: {
+      containerAnimation: timeline,
+      trigger: '[animate]',
+      start: 'left center',
+      scrub: true,
+      markers: true,
+    },
+  });
+});
+
