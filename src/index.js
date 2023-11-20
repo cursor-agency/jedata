@@ -1,1 +1,4 @@
-console.log('test');
+import './test';
+import './test-2';
+
+console.log('log');

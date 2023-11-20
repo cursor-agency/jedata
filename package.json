@@ -6,9 +6,7 @@
   "author": "Misha Zubkov <zu6koff@mail.ru>",
   "license": "MIT",
   "scripts": {
-    "build:scripts": "esbuild ./src/index.js --bundle --minify --outfile=index.js",
-    "build:styles": "esbuild ./src/index.css --bundle --minify --outfile=index.css",
-    "build": "npm run build:styles && node esbuild.mjs"
+    "build": "esbuild ./src/index.* ./src/**/index.* --bundle --minify --outdir=./dist"
   },
   "dependencies": {
     "esbuild": "^0.19.6"
