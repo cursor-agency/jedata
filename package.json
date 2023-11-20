@@ -6,9 +6,10 @@
   "author": "Misha Zubkov <zu6koff@mail.ru>",
   "license": "MIT",
   "scripts": {
-    "build": "esbuild ./src/index.* ./src/**/index.* --bundle --minify --outdir=./build"
+    "build": "esbuild ./src/*.* ./src/**/index.* ./src/**/**/index.* --bundle --minify --outdir=./build"
   },
   "dependencies": {
-    "esbuild": "^0.19.6"
+    "esbuild": "^0.19.6",
+    "gsap": "^3.12.2"
   }
 }

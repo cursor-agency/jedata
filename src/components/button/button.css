@@ -1,0 +1,85 @@
+.base-button {
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    transition: color 200ms ease-out;
+}
+
+.base-button > .button__text {
+    z-index: 1;
+}
+
+.base-button::after,
+.base-button::before {
+    content: "";
+
+    z-index: 0;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 1.5rem;
+    margin: auto 0;
+
+    width: 0.55556rem;
+    height: 0.55556rem;
+
+    border-radius: 50%;
+}
+
+.base-button::before {
+    transition: transform 350ms ease-out;
+}
+
+.base-button::after {
+    transition: transform 250ms ease-out;
+    transform: scale(0);
+}
+
+.base-button:hover::before {
+    transform: scale(40);
+}
+
+.base-button:hover::after {
+    transform: scale(1);
+}
+
+.base-button.button--long::before {
+    transition-duration: 450ms;
+}
+
+.base-button.button--long:hover::before {
+    transform: scale(100);
+}
+
+.base-button.button--primary::before {
+    background-color: var(--color--accent_green);
+}
+
+.base-button.button--primary::after {
+    background-color: #ffffff;
+}
+
+.base-button.button_overlay:hover {
+    color: #0f1010;
+}
+
+.base-button.button_overlay::before {
+    background-color: #ffffff;
+}
+
+.base-button.button_overlay::after {
+    background-color: var(--color--accent_green);
+}
+
+.base-button.button_accent:hover {
+    color: #0f1010;
+}
+
+.base-button.button_accent::before {
+    background-color: var(--color--accent_green);
+}
+
+.base-button.button_accent::after {
+    background-color: #ffffff;
+}
