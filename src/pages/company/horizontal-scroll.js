@@ -57,13 +57,22 @@ animatedNodes.forEach((node, index) => {
   });
 
   const words = node.querySelectorAll('.word');
-  tl.from(words, {
-    y: '110%',
-    opacity: 0,
-    rotationZ: '10',
+  const baseOptions = {
     duration: 0.5,
     ease: 'power1.out',
     stagger: 0.1,
-  }, "text animation");
+  }
+  const initState = {
+    y: '110%',
+    opacity: 0,
+    rotationZ: '10',
+  }
+  tl.from(words, {
+    ...baseOptions,
+    ...initState,
+  }).to({
+    ...baseOptions,
+    ...initState,
+  })
 })
 
