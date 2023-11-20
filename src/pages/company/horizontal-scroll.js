@@ -59,7 +59,7 @@ animatedNodes.forEach((node, index) => {
     stagger: 0.1,
     scrollTrigger: {
       containerAnimation: timeline,
-      trigger: node,
+      trigger: `[animate="${index+1}"]`,
       start: 'left center',
       scrub: true,
       markers: true,
