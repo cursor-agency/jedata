@@ -54,20 +54,22 @@ animatedNodes.forEach((node, index) => {
 
   node.classList.add(className);
 
-  gsap.from(`${className} .word`, {
-    y: '110%',
-    opacity: 0,
-    rotationZ: '10',
-    duration: 0.5,
-    ease: 'power1.out',
-    stagger: 0.1,
-    scrollTrigger: {
-      containerAnimation: timeline,
-      trigger: node,
-      start: 'left center',
-      scrub: true,
-      markers: true,
-    },
-  });
+  setTimeout(() => {
+    gsap.from(`${className} .word`, {
+      y: '110%',
+      opacity: 0,
+      rotationZ: '10',
+      duration: 0.5,
+      ease: 'power1.out',
+      stagger: 0.1,
+      scrollTrigger: {
+        containerAnimation: timeline,
+        trigger: node,
+        start: 'left center',
+        scrub: true,
+        markers: true,
+      },
+    });
+  }, 100)
 })
 
