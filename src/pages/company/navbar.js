@@ -1,4 +1,8 @@
-import {changeColorToDark, changeColorToLight} from '../../components/navbar';
+import {
+  changeColorToDark,
+  changeColorToLight,
+  NAVBAR_SELECTORS,
+} from '../../components/navbar';
 
 export const SELECTORS = {
   aboutMainSection: ".about-main-section",
@@ -41,4 +45,4 @@ const firstOurStorySectionTl = gsap.timeline({
   },
 });
 
-firstOurStorySectionTl.to(SELECTORS.navbar, { opacity: 0 });
+firstOurStorySectionTl.to(NAVBAR_SELECTORS.navbar, { opacity: 0 });
