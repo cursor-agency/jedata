@@ -31,16 +31,13 @@ const timeline = gsap.timeline({
   },
 });
 
-// timeline.fromTo(
-//     SELECTORS.track,
-//     {
-//       transform: "translate3d(0%, 0px, 0px)",
-//     },
-//     {
-//       transform: "translate3d(-100%, 0px, 0px)",
-//     },
-//     "horizontal scroll",
-// );
+timeline.to(
+    SELECTORS.track,
+    {
+      xPercent: -100,
+      ease: "none",
+    },
+);
 
 new SplitType('[animate]', {
   types: 'lines, words',
@@ -58,7 +55,7 @@ animatedNodes.forEach((node, index) => {
     ease: 'power1.out',
     stagger: 0.1,
     scrollTrigger: {
-      // containerAnimation: timeline,
+      containerAnimation: timeline,
       trigger: `[animate="${index+1}"]`,
       start: 'left right',
       markers: true,
