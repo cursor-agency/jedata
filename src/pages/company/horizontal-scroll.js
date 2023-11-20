@@ -47,25 +47,45 @@ new SplitType('[animate]', {
   tagName: 'span',
 });
 
-const animatedNodes = document.querySelectorAll('[animate]');
+// const animatedNodes = document.querySelectorAll('[animate]');
 
-animatedNodes.forEach((node, index) => {
-  const words = node.querySelectorAll('.word');
+gsap.from(`[animate] .word`, {
+  y: '110%',
+  opacity: 0,
+  rotationZ: '10',
+  duration: 0.5,
+  ease: 'power1.out',
+  stagger: 0.1,
+  scrollTrigger: {
+    containerAnimation: timeline,
+    trigger: node,
+    start: 'left center',
+    scrub: true,
+    markers: true,
+  },
+});
 
-  gsap.from(words, {
-    y: '110%',
-    opacity: 0,
-    rotationZ: '10',
-    duration: 0.5,
-    ease: 'power1.out',
-    stagger: 0.1,
-    scrollTrigger: {
-      containerAnimation: timeline,
-      trigger: node,
-      start: 'left center',
-      scrub: true,
-      markers: true,
-    },
-  });
-})
+// animatedNodes.forEach((node, index) => {
+//   const className = `animated-text__${index}`;
+//
+//   node.classList.add(className);
+//
+//   setTimeout(() => {
+//     gsap.from(`[animate] .word`, {
+//       y: '110%',
+//       opacity: 0,
+//       rotationZ: '10',
+//       duration: 0.5,
+//       ease: 'power1.out',
+//       stagger: 0.1,
+//       scrollTrigger: {
+//         containerAnimation: timeline,
+//         trigger: node,
+//         start: 'left center',
+//         scrub: true,
+//         markers: true,
+//       },
+//     });
+//   }, 100);
+// })
 
