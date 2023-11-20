@@ -53,10 +53,10 @@ gsap.from('[animate] .word', {
   rotationZ: '10',
   duration: 0.5,
   ease: 'power1.out',
-  stagger: 0.05,
+  stagger: 0.1,
   scrollTrigger: {
     trigger: '[animate]',
     start: 'left center',
     scrub: true,
   },
-}, "text animation");
+});
