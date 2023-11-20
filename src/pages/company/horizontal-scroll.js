@@ -58,7 +58,7 @@ animatedNodes.forEach((node, index) => {
     ease: 'power1.out',
     stagger: 0.1,
     scrollTrigger: {
-      containerAnimation: timeline,
+      // containerAnimation: timeline,
       trigger: `[animate="${index+1}"]`,
       start: 'left right',
       markers: true,
