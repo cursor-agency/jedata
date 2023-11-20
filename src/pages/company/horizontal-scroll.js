@@ -53,6 +53,7 @@ animatedNodes.forEach((node, index) => {
       trigger: node,
       start: 'left right',
       markers: true,
+      scrub: true,
     },
   });
 
