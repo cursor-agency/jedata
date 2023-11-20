@@ -1,3 +1,5 @@
+import SplitType from 'split-type'
+
 const SELECTORS = {
   section: ".explore-our-story-section",
   track: ".explore-our-story__track",
@@ -39,3 +41,21 @@ timeline.fromTo(
     },
     "horizontal scroll",
 );
+
+new SplitType('[animate]', {
+  types: 'words',
+  tagName: 'span',
+})
+
+gsap.from('[animate] .word', {
+  y: '100%',
+  opacity: 1,
+  duration: 0.25,
+  ease: 'power1.out',
+  stagger: 0.05,
+
+  scrollTrigger: {
+    trigger: '[animate]',
+    start: 'left center',
+  }
+});
