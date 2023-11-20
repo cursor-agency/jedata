@@ -70,7 +70,7 @@ animatedNodes.forEach((node, index) => {
   tl.from(words, {
     ...baseOptions,
     ...initState,
-  }).to({
+  }).to(words, {
     ...baseOptions,
     ...initState,
   })
