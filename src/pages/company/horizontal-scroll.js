@@ -52,8 +52,6 @@ animatedNodes.forEach((node, index) => {
       containerAnimation: timeline,
       trigger: node,
       start: 'left right',
-      markers: true,
-      scrub: true,
     },
   });
 
@@ -71,10 +69,6 @@ animatedNodes.forEach((node, index) => {
   tl.from(words, {
     ...baseOptions,
     ...initState,
-  }).to(words, {
-    ...baseOptions,
-    ...initState,
-    rotationZ: '-10',
   })
 })
 
