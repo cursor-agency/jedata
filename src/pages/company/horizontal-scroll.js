@@ -55,8 +55,8 @@ gsap.from('[animate] .word', {
   ease: 'power1.out',
   stagger: 0.1,
   scrollTrigger: {
+    containerAnimation: timeline,
     trigger: '[animate]',
-    start: 'left center',
     scrub: true,
     markers: true,
   },
