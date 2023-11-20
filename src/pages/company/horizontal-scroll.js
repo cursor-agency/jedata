@@ -49,10 +49,8 @@ new SplitType('[animate]', {
 
 const animatedNodes = document.querySelectorAll('[animate]');
 
-animatedNodes.forEach((node, index) => {
-  node.classList.add(`animated-text__${index + 1}`);
-
-  gsap.from(`animated-text__${index + 1} .word`, {
+animatedNodes.forEach((node) => {
+  gsap.from('[animate] .word', {
     y: '110%',
     opacity: 0,
     rotationZ: '10',
@@ -61,11 +59,11 @@ animatedNodes.forEach((node, index) => {
     stagger: 0.1,
     scrollTrigger: {
       containerAnimation: timeline,
-      trigger: '[animate]',
+      trigger: node,
       start: 'left center',
       scrub: true,
       markers: true,
     },
   });
-});
+})
 
