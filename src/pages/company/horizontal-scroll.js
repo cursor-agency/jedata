@@ -61,7 +61,6 @@ animatedNodes.forEach((node, index) => {
       containerAnimation: timeline,
       trigger: `[animate="${index+1}"]`,
       start: 'left center',
-      scrub: true,
       markers: true,
     },
   })
