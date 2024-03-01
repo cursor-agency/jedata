@@ -1,6 +1,6 @@
 name: Build assets
 run-name: Build assets
-on: [push]
+on: [push, workflow_dispatch]
 permissions:
   contents: write
 jobs:
